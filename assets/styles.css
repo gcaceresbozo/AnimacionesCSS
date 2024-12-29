@@ -1,0 +1,435 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container-grid {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "navegador"
+    "contenido"
+    "footer";
+  margin: 0;
+  padding: 0;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 50px auto 125px;
+  min-height: 100vh;
+}
+
+header {
+  grid-area: header;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #eb400d;
+  color: white;
+  gap: 2rem;
+}
+header h1 {
+  padding: 1rem;
+}
+h1 {
+  animation: aumentar 3s ease-in-out infinite;
+}
+@keyframes aumentar {
+  0% {
+    font-size: 24px;
+  }
+  50% {
+    font-size: 28px;
+  }
+  100% {
+    font-size: 24px;
+  }
+}
+
+.logo {
+  width: 30vw;
+  padding: 1rem;
+}
+.logo img {
+  width: 150%;
+}
+
+nav {
+  grid-area: navegador;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #e4bd0d;
+  color: white;
+}
+
+
+.logo-rochi {
+  width: 55px;
+  border-radius: 50%;
+  margin-top: 20px;
+  animation: spin3d-reverse 5s linear infinite; /* Animación de giro 3D más lento */
+  transform-style: preserve-3d; /* Asegura el efecto 3D */
+}
+
+/* Animación de giro 3D hacia el otro lado */
+@keyframes spin3d-reverse {
+  from {
+    transform: rotateY(0deg); /* Inicia sin rotación */
+  }
+  to {
+    transform: rotateY(-360deg); /* Gira 360 grados en el eje Y en dirección opuesta (de derecha a izquierda) */
+  }
+}
+
+.logo-esfera{
+  width: 25px;
+  border-radius: 50%;
+}
+
+/* Selección específica de la imagen */
+.logo-esfera {
+  width: 25px; /* Ajusta el tamaño según sea necesario */
+  height: auto;
+  animation: spin 3s linear infinite; /* Animación rotatoria */
+}
+
+/* Definición de la animación */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: 3vw;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+.resaltar {
+  background-color: transparent;
+  transition: color 0.3s, font-size 0.3s;
+}
+.resaltar:hover {
+  color: rgb(255, 208, 0);
+  font-size: 18px;
+}
+main {
+  grid-area: contenido;
+  background-color: #eb400d;
+
+  display: flex;
+  flex-direction: column;
+  padding: 0%;
+}
+.resumen {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: end;
+  text-align: justify;
+  gap: 2rem;
+  padding: 1rem;
+  height: 20rem;
+  background-image: url(./image/bg-travel.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left;
+}
+.resumen h2,
+p {
+  width: 45vw;
+}
+#holasoygoku {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  padding-bottom: 1rem;
+  background-color: rgb(242, 246, 255);
+}
+.icono-titulo {
+  display: flex;
+ 
+}
+
+#holasoygoku i {
+  font-size: 5vw;
+  display: flex;
+  align-items: center;
+}
+#holasoygoku h2 {
+  width: 45vw;
+  padding: 1rem;
+  font-size: 7vw;
+}
+#holasoygoku p {
+  width: 85vw;
+  text-align: justify;
+  padding-bottom: 0.5rem;
+}
+#sagas {
+ 
+  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  place-items: center;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: white;
+  
+}
+#sagas i {
+  font-size: 5vw;
+  display: flex;
+  align-items: center;
+}
+#sagas h2 {
+  width: 45vw;
+  padding: 1rem;
+  font-size: 7vw;
+}
+.imagen-sagas {
+  display: grid;
+  grid-template-rows: repeat(9, auto);
+  row-gap: 20px;
+  align-items: center;
+  width: 45vw;
+  padding-top: 0.8rem;
+  padding-bottom: 2rem;
+}
+.imagen-sagas img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  filter: grayscale(100%);
+  transition: 1s ease;
+}
+.imagen-sagas img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+#formulario {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1500px;
+  margin: 2rem auto;
+}
+
+.form-titulo {
+  text-align: center;
+}
+
+.form-titulo img {
+  width: 80px;
+  margin-top: 1rem;
+}
+
+.form-titulo h2 {
+  padding-top: 1rem;
+}
+
+.form-label {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.form-label label {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.form-label input,
+.form-label textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.form-label input:focus,
+.form-label textarea:focus {
+  border-color: #177e89;
+  outline: none;
+  box-shadow: 0 0 5px rgba(23, 126, 137, 0.5);
+}
+
+.form-enviar {
+  margin-top: 1rem;
+}
+
+.form-enviar button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #177e89;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-enviar button:hover {
+  background-color: #084c61;
+}
+footer {
+  grid-area: footer;
+  background-color: #4f6968;
+  color: white;
+  display: flex;
+  padding: 1rem 2rem;
+  justify-content: space-between;
+}
+.footer-titulo {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  
+}
+.footer-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.footer-link a {
+  font-size: 15px;
+  color: beige;
+}
+.resaltar-footer {
+  transition: color 0.3s, font-size 0.3s;
+}
+.resaltar-footer:hover {
+  color: rgb(255, 208, 0);
+  font-size: 15px;
+}
+
+/* _________________________________________________________________________________________ */
+
+
+@media (min-width: 576px) {
+  .container-grid {
+    grid-template-areas:
+      "header header"
+      "navegador contenido"
+      "footer footer";
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 100px min-content 125px; /* Ajusta filas al contenido */
+    min-height: 100vh; /* Mantiene la altura mínima del viewport */
+  }
+
+
+  .logo {
+    width: 175px;
+  }
+  nav {
+    align-items: start;
+    padding-top: 2rem;
+    font-weight: bold;
+    font-size: 20px; /* Ajusta el tamaño según lo necesario */
+  }
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Espaciado entre los elementos */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+  }
+  .resumen {
+    height: 30rem;
+  }
+  .icono-titulo {
+    text-align: center;
+  }
+  #holasoygoku i {
+    font-size: 2.5vw;
+  }
+  #holasoygoku h2 {
+    width: 45vw;
+    font-size: 3vw;
+  }
+  #holasoygoku p {
+    width: 65vw;
+    padding-bottom: 0.5rem;
+  }
+  #sagas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 1rem; /* Reduce espacio entre secciones */
+    padding: 2rem 0;
+    height: 30%; /* Permite que crezca según el contenido */
+    background-color: white;
+  }
+
+  #sagas i {
+    font-size: 2.5vw;
+  }
+  #sagas h2 {
+    width: 45vw;
+    font-size: 3vw;
+  }
+  .imagen-sagas {
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+    column-gap: 5vh;
+    row-gap: 2vw;
+    width: 55vw;
+    padding-top: 0.8rem;
+    padding-bottom: 12rem;
+  }
+  .form-titulo p {
+    width: 65vw;
+    padding: 2%;
+  }
+  .form-label {
+    width: 65vw;
+  }
+  footer {
+    justify-content: space-evenly;
+    
+  }
+}
+
+/* Estilo para los iconos */
+.social-icons i {
+  font-size: 30px;
+  margin: 10px;
+  color: #333;
+  transition: color 0.3s ease;
+  
+  
+}
+
+.social-icons i:hover {
+  color: #0073b1; /* Cambiar color cuando el cursor pasa sobre el icono */
+}
+
+
